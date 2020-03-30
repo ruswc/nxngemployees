@@ -47,6 +47,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "baseHref": "https://ruswc.github.io/nxngemployees/",
               "budgets": [
                 {
                   "type": "initial",
