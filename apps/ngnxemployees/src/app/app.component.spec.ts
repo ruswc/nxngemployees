@@ -1,33 +1,48 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { UiEmployeesModule } from '@nxngemployees/ui-employees';
+import { UiMainModule } from '@nxngemployees/ui-main';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { AppRoutingModule } from '../../../../libs/ui-main/src/lib/app-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
+      imports: [
+        UiEmployeesModule,
+        UiMainModule,
+        UiEmployeesModule,
+        CommonModule,
+        MatIconModule,
+        MatListModule,
+        HttpClientModule,
+        MatButtonModule,
+        AppRoutingModule,
+        MatProgressSpinnerModule,
+        RouterTestingModule,
+        BrowserAnimationsModule
+      ]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'ngnxemployees'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngnxemployees');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to ngnxemployees!'
-    );
+  });
+
+  it('should be created', () => {
+    expect(component).toBeTruthy();
   });
 });

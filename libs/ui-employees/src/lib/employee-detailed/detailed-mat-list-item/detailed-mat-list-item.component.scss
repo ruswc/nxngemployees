@@ -1,0 +1,15 @@
+.mat-line,
+.mat-subheader {
+  padding: 0;
+  height: min-content;
+}
+
+.mat-subheader {
+  height: min-content;
+  margin-top: unset !important;
+}
+
+.mat-list-item {
+  height: unset !important;
+  padding: 0.5rem 0;
+}

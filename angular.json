@@ -25,7 +25,10 @@
               "apps/ngnxemployees/src/favicon.ico",
               "apps/ngnxemployees/src/assets"
             ],
-            "styles": ["apps/ngnxemployees/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/ngnxemployees/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -121,6 +124,98 @@
             "tsConfig": ["apps/ngnxemployees-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/ngnxemployees-e2e/**"]
           }
+        }
+      }
+    },
+    "ui-header": {
+      "projectType": "library",
+      "root": "libs/ui-header",
+      "sourceRoot": "libs/ui-header/src",
+      "prefix": "nxngemployees",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-header/tsconfig.lib.json",
+              "libs/ui-header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-header/jest.config.js",
+            "tsConfig": "libs/ui-header/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui-header/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-main": {
+      "projectType": "library",
+      "root": "libs/ui-main",
+      "sourceRoot": "libs/ui-main/src",
+      "prefix": "nxngemployees",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-main/tsconfig.lib.json",
+              "libs/ui-main/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-main/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-main/jest.config.js",
+            "tsConfig": "libs/ui-main/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui-main/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "ui-employees": {
+      "projectType": "library",
+      "root": "libs/ui-employees",
+      "sourceRoot": "libs/ui-employees/src",
+      "prefix": "nxngemployees",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-employees/tsconfig.lib.json",
+              "libs/ui-employees/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-employees/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-employees/jest.config.js",
+            "tsConfig": "libs/ui-employees/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui-employees/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

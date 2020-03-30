@@ -17,6 +17,21 @@
     "ngnxemployees-e2e": {
       "tags": [],
       "implicitDependencies": ["ngnxemployees"]
+    },
+    "ui": {
+      "tags": []
+    },
+    "ui-header": {
+      "tags": []
+    },
+    "ui-main": {
+      "tags": []
+    },
+    "ui-employees": {
+      "tags": []
+    },
+    "ui-employees-src-lib-ui-employees-detailed": {
+      "tags": []
     }
   }
 }
