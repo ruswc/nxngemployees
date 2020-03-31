@@ -1,10 +1,11 @@
-# Nxngemployees
+# Nxngemployees ![](https://travis-ci.com/ruswc/nxngemployees.svg?branch=master&status=passed)
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
-
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+
+## Quick Start & Documentation
+The result can be checked by the link: https://ruswc.github.io/nxngemployees/
 
 ## Quick Start & Documentation
 

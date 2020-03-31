@@ -18,7 +18,7 @@ describe('UiMainModule', () => {
     }).compileComponents();
   }));
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(UiMainModule).toBeDefined();
   });
 });
