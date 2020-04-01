@@ -1,237 +1,248 @@
 {
-  "version": 1,
-  "projects": {
-    "ngnxemployees": {
-      "projectType": "application",
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "apps/ngnxemployees",
-      "sourceRoot": "apps/ngnxemployees/src",
-      "prefix": "nxngemployees",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/ngnxemployees",
-            "index": "apps/ngnxemployees/src/index.html",
-            "main": "apps/ngnxemployees/src/main.ts",
-            "polyfills": "apps/ngnxemployees/src/polyfills.ts",
-            "tsConfig": "apps/ngnxemployees/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/ngnxemployees/src/favicon.ico",
-              "apps/ngnxemployees/src/assets"
-            ],
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "apps/ngnxemployees/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/ngnxemployees/src/environments/environment.ts",
-                  "with": "apps/ngnxemployees/src/environments/environment.prod.ts"
+    "version": 1,
+    "projects": {
+        "ngnxemployees": {
+            "projectType": "application",
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
                 }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "baseHref": "https://ruswc.github.io/nxngemployees/",
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+            },
+            "root": "apps/ngnxemployees",
+            "sourceRoot": "apps/ngnxemployees/src",
+            "prefix": "nxngemployees",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/ngnxemployees",
+                        "index": "apps/ngnxemployees/src/index.html",
+                        "main": "apps/ngnxemployees/src/main.ts",
+                        "polyfills": "apps/ngnxemployees/src/polyfills.ts",
+                        "tsConfig": "apps/ngnxemployees/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "apps/ngnxemployees/src/favicon.ico",
+                            "apps/ngnxemployees/src/assets"
+                        ],
+                        "styles": [
+                            "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+                            "apps/ngnxemployees/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/ngnxemployees/src/environments/environment.ts",
+                                    "with": "apps/ngnxemployees/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "baseHref": "https://ruswc.github.io/nxngemployees/",
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        }
+                    }
                 },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "ngnxemployees:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "ngnxemployees:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "ngnxemployees:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/ngnxemployees/tsconfig.app.json",
+                            "apps/ngnxemployees/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/ngnxemployees/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/ngnxemployees/jest.config.js",
+                        "tsConfig": "apps/ngnxemployees/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "apps/ngnxemployees/src/test-setup.ts"
+                    }
                 }
-              ]
             }
-          }
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "ngnxemployees:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ngnxemployees:build:production"
+        "ngnxemployees-e2e": {
+            "root": "apps/ngnxemployees-e2e",
+            "sourceRoot": "apps/ngnxemployees-e2e/src",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/ngnxemployees-e2e/cypress.json",
+                        "tsConfig": "apps/ngnxemployees-e2e/tsconfig.e2e.json",
+                        "devServerTarget": "ngnxemployees:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "ngnxemployees:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/ngnxemployees-e2e/tsconfig.e2e.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/ngnxemployees-e2e/**"
+                        ]
+                    }
+                }
             }
-          }
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ngnxemployees:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/ngnxemployees/tsconfig.app.json",
-              "apps/ngnxemployees/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/ngnxemployees/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/ngnxemployees/jest.config.js",
-            "tsConfig": "apps/ngnxemployees/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/ngnxemployees/src/test-setup.ts"
-          }
-        }
-      }
-    },
-    "ngnxemployees-e2e": {
-      "root": "apps/ngnxemployees-e2e",
-      "sourceRoot": "apps/ngnxemployees-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/ngnxemployees-e2e/cypress.json",
-            "tsConfig": "apps/ngnxemployees-e2e/tsconfig.e2e.json",
-            "devServerTarget": "ngnxemployees:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngnxemployees:serve:production"
+        "ui-header": {
+            "projectType": "library",
+            "root": "libs/ui-header",
+            "sourceRoot": "libs/ui-header/src",
+            "prefix": "nxngemployees",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/ui-header/tsconfig.lib.json",
+                            "libs/ui-header/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/ui-header/jest.config.js",
+                        "tsConfig": "libs/ui-header/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/ui-header/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
             }
-          }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": ["apps/ngnxemployees-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ngnxemployees-e2e/**"]
-          }
-        }
-      }
-    },
-    "ui-header": {
-      "projectType": "library",
-      "root": "libs/ui-header",
-      "sourceRoot": "libs/ui-header/src",
-      "prefix": "nxngemployees",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ui-header/tsconfig.lib.json",
-              "libs/ui-header/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
-          }
+        "ui-main": {
+            "projectType": "library",
+            "root": "libs/ui-main",
+            "sourceRoot": "libs/ui-main/src",
+            "prefix": "nxngemployees",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/ui-main/tsconfig.lib.json",
+                            "libs/ui-main/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/ui-main/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/ui-main/jest.config.js",
+                        "tsConfig": "libs/ui-main/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/ui-main/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {}
         },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui-header/jest.config.js",
-            "tsConfig": "libs/ui-header/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ui-header/src/test-setup.ts"
-          }
+        "ui-employees": {
+            "projectType": "library",
+            "root": "libs/ui-employees",
+            "sourceRoot": "libs/ui-employees/src",
+            "prefix": "nxngemployees",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/ui-employees/tsconfig.lib.json",
+                            "libs/ui-employees/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/ui-employees/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/ui-employees/jest.config.js",
+                        "tsConfig": "libs/ui-employees/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/ui-employees/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            }
         }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
     },
-    "ui-main": {
-      "projectType": "library",
-      "root": "libs/ui-main",
-      "sourceRoot": "libs/ui-main/src",
-      "prefix": "nxngemployees",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ui-main/tsconfig.lib.json",
-              "libs/ui-main/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/ui-main/**"]
-          }
+    "cli": {
+        "defaultCollection": "@nrwl/angular"
+    },
+    "schematics": {
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
         },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui-main/jest.config.js",
-            "tsConfig": "libs/ui-main/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ui-main/src/test-setup.ts"
-          }
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
         }
-      },
-      "schematics": {}
     },
-    "ui-employees": {
-      "projectType": "library",
-      "root": "libs/ui-employees",
-      "sourceRoot": "libs/ui-employees/src",
-      "prefix": "nxngemployees",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/ui-employees/tsconfig.lib.json",
-              "libs/ui-employees/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/ui-employees/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/ui-employees/jest.config.js",
-            "tsConfig": "libs/ui-employees/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/ui-employees/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    }
-  },
-  "defaultProject": "ngnxemployees"
+    "defaultProject": "ngnxemployees"
 }

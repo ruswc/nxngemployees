@@ -5,23 +5,23 @@ import { DetailedMatListItemComponent } from './detailed-mat-list-item.component
 import { MatListModule } from '@angular/material/list';
 
 describe('DetailedMatListItemComponent', () => {
-  let component: DetailedMatListItemComponent;
-  let fixture: ComponentFixture<DetailedMatListItemComponent>;
+    let component: DetailedMatListItemComponent;
+    let fixture: ComponentFixture<DetailedMatListItemComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [DetailedMatListItemComponent],
-      imports: [MatListModule]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [DetailedMatListItemComponent],
+            imports: [MatListModule]
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DetailedMatListItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(DetailedMatListItemComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -6,19 +6,19 @@ import { UiEmployeesModule } from '@nxngemployees/ui-employees';
 import { AppRoutingModule } from './app-routing.module';
 
 describe('UiMainModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        UiMainModule,
-        CommonModule,
-        UiHeaderModule,
-        UiEmployeesModule,
-        AppRoutingModule
-      ]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            imports: [
+                UiMainModule,
+                CommonModule,
+                UiHeaderModule,
+                UiEmployeesModule,
+                AppRoutingModule
+            ]
+        }).compileComponents();
+    }));
 
-  it('should create', () => {
-    expect(UiMainModule).toBeDefined();
-  });
+    it('should create', () => {
+        expect(UiMainModule).toBeDefined();
+    });
 });

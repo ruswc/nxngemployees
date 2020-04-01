@@ -6,8 +6,13 @@ import { UiEmployeesModule } from '@nxngemployees/ui-employees';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports: [CommonModule, UiHeaderModule, UiEmployeesModule, AppRoutingModule],
-  declarations: [MainComponent],
-  exports: [MainComponent]
+    imports: [
+        CommonModule,
+        UiHeaderModule,
+        UiEmployeesModule,
+        AppRoutingModule
+    ],
+    declarations: [MainComponent],
+    exports: [MainComponent]
 })
 export class UiMainModule {}

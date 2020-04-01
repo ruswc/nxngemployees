@@ -5,26 +5,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { AppRoutingModule } from '../../../ui-main/src/lib/app-routing.module';
+// import { AppRoutingModule } from '@nxngemployees/ui-main';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('UiEmployeesModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        UiEmployeesModule,
-        CommonModule,
-        MatIconModule,
-        MatListModule,
-        HttpClientModule,
-        MatButtonModule,
-        AppRoutingModule,
-        MatProgressSpinnerModule
-      ]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            imports: [
+                UiEmployeesModule,
+                CommonModule,
+                MatIconModule,
+                MatListModule,
+                HttpClientModule,
+                MatButtonModule,
+                // AppRoutingModule,
+                MatProgressSpinnerModule
+            ]
+        }).compileComponents();
+    }));
 
-  it('should create', () => {
-    expect(UiEmployeesModule).toBeDefined();
-  });
+    it('should create', () => {
+        expect(UiEmployeesModule).toBeDefined();
+    });
 });

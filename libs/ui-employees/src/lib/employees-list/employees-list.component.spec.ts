@@ -11,34 +11,34 @@ import { MatSpinner } from '@angular/material/progress-spinner';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('EmployeesListComponent', () => {
-  let component: EmployeesListComponent;
-  let fixture: ComponentFixture<EmployeesListComponent>;
+    let component: EmployeesListComponent;
+    let fixture: ComponentFixture<EmployeesListComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        EmployeesListComponent,
-        LoaderComponent,
-        SortDescendingPipe,
-        SortAscendingPipe,
-        MatSpinner
-      ],
-      imports: [
-        MatListModule,
-        MatIconModule,
-        RouterModule,
-        HttpClientTestingModule
-      ]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                EmployeesListComponent,
+                LoaderComponent,
+                SortDescendingPipe,
+                SortAscendingPipe,
+                MatSpinner
+            ],
+            imports: [
+                MatListModule,
+                MatIconModule,
+                RouterModule,
+                HttpClientTestingModule
+            ]
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EmployeesListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(EmployeesListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

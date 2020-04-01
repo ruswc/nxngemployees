@@ -1,31 +1,31 @@
 {
-  "npmScope": "nxngemployees",
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "nxngemployees",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
     },
-    "tsconfig.json": "*",
-    "tslint.json": "*",
-    "nx.json": "*"
-  },
-  "projects": {
-    "ngnxemployees": {
-      "tags": []
-    },
-    "ngnxemployees-e2e": {
-      "tags": [],
-      "implicitDependencies": ["ngnxemployees"]
-    },
-    "ui-header": {
-      "tags": []
-    },
-    "ui-main": {
-      "tags": []
-    },
-    "ui-employees": {
-      "tags": []
+    "projects": {
+        "ngnxemployees": {
+            "tags": []
+        },
+        "ngnxemployees-e2e": {
+            "tags": [],
+            "implicitDependencies": ["ngnxemployees"]
+        },
+        "ui-header": {
+            "tags": []
+        },
+        "ui-main": {
+            "tags": []
+        },
+        "ui-employees": {
+            "tags": []
+        }
     }
-  }
 }

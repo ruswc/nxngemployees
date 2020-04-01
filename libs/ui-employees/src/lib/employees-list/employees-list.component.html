@@ -1,24 +1,24 @@
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
 
 <div class="mat-elevation-z2 list" *ngIf="!loader">
-  <div class="list-title">
-    <button mat-icon-button (click)="sort = 'asc'">
-      <mat-icon>keyboard_arrow_up</mat-icon>
-    </button>
-    <button mat-icon-button (click)="sort = 'desc'">
-      <mat-icon>keyboard_arrow_down</mat-icon>
-    </button>
-  </div>
-  <mat-nav-list>
-    <mat-list-item
-      *ngFor="
-        let employee of employees
-          | sortAscending: sort === 'asc'
-          | sortDescending: sort === 'desc'
-      "
-      routerLink="/employees/{{ employee.id }}"
-    >
-      {{ employee.name }}
-    </mat-list-item>
-  </mat-nav-list>
+    <div class="list-title">
+        <button mat-icon-button (click)="sort = 'asc'">
+            <mat-icon>keyboard_arrow_up</mat-icon>
+        </button>
+        <button mat-icon-button (click)="sort = 'desc'">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+    </div>
+    <mat-nav-list>
+        <mat-list-item
+            *ngFor="
+                let employee of employees
+                    | sortAscending: sort === 'asc'
+                    | sortDescending: sort === 'desc'
+            "
+            routerLink="/employees/{{ employee.id }}"
+        >
+            {{ employee.name }}
+        </mat-list-item>
+    </mat-nav-list>
 </div>

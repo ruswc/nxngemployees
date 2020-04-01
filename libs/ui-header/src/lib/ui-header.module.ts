@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, MatToolbarModule, MatIconModule, RouterModule],
-  declarations: [HeaderComponent],
-  exports: [HeaderComponent]
+    imports: [CommonModule, MatToolbarModule, MatIconModule, RouterModule],
+    declarations: [HeaderComponent],
+    exports: [HeaderComponent]
 })
 export class UiHeaderModule {}

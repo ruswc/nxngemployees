@@ -12,33 +12,32 @@ import { SortAscendingPipe } from './employees-list/pipes/sort-ascending.pipe';
 import { SortDescendingPipe } from './employees-list/pipes/sort-descending.pipe';
 import { EmployeeDetailedComponent } from './employee-detailed/employee-detailed.component';
 
-import { AppRoutingModule } from '../../../ui-main/src/lib/app-routing.module';
 import { LoaderComponent } from './loader/loader.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatListModule,
-    HttpClientModule,
-    MatButtonModule,
-    AppRoutingModule,
-    MatProgressSpinnerModule
-  ],
-  declarations: [
-    DetailedMatListItemComponent,
-    EmployeesListComponent,
-    SortAscendingPipe,
-    SortDescendingPipe,
-    EmployeeDetailedComponent,
-    LoaderComponent
-  ],
-  exports: [
-    DetailedMatListItemComponent,
-    EmployeesListComponent,
-    EmployeeDetailedComponent,
-    AppRoutingModule,
-    LoaderComponent
-  ]
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatListModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        RouterModule
+    ],
+    declarations: [
+        DetailedMatListItemComponent,
+        EmployeesListComponent,
+        SortAscendingPipe,
+        SortDescendingPipe,
+        EmployeeDetailedComponent,
+        LoaderComponent
+    ],
+    exports: [
+        DetailedMatListItemComponent,
+        EmployeesListComponent,
+        EmployeeDetailedComponent,
+        LoaderComponent
+    ]
 })
 export class UiEmployeesModule {}

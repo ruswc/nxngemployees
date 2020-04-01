@@ -4,13 +4,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
 describe('UiHeaderModule', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [UiHeaderModule, MatToolbarModule, MatIconModule]
-    }).compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            imports: [UiHeaderModule, MatToolbarModule, MatIconModule]
+        }).compileComponents();
+    }));
 
-  it('should create', () => {
-    expect(UiHeaderModule).toBeDefined();
-  });
+    it('should create', () => {
+        expect(UiHeaderModule).toBeDefined();
+    });
 });

@@ -1,19 +1,19 @@
 .navbar {
-  //justify-content: space-between;
-  & .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    outline: none !important;
-  }
+    //justify-content: space-between;
+    & .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        outline: none !important;
+    }
 
-  & span {
-    margin: 1rem;
-  }
+    & span {
+        margin: 1rem;
+    }
 
-  & .link {
-    cursor: pointer;
-    outline: none !important;
-  }
+    & .link {
+        cursor: pointer;
+        outline: none !important;
+    }
 }

@@ -3,22 +3,22 @@ sudo: false
 
 language: node_js
 node_js:
-  - lts/*
+    - lts/*
 
 cache:
-  directories:
-    - ./node_modules
+    directories:
+        - ./node_modules
 
 install:
-  - npm install
+    - npm install
 
 script:
-  - npm run-script build
+    - npm run-script build
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/apps/ngnxemployees
-  on:
-    branch: master
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: dist/apps/ngnxemployees
+    on:
+        branch: master

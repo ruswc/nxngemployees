@@ -1,29 +1,29 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@nxngemployees/ui": ["libs/ui/src/index.ts"],
-      "@nxngemployees/ui-header": ["libs/ui-header/src/index.ts"],
-      "@nxngemployees/ui-main": ["libs/ui-main/src/index.ts"],
-      "@nxngemployees/ui-employees": ["libs/ui-employees/src/index.ts"],
-      "@nxngemployees/ui-employees/src/lib/ui-employees-detailed": [
-        "libs/ui-employees/src/lib/ui-employees-detailed/src/index.ts"
-      ]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@nxngemployees/ui": ["libs/ui/src/index.ts"],
+            "@nxngemployees/ui-header": ["libs/ui-header/src/index.ts"],
+            "@nxngemployees/ui-main": ["libs/ui-main/src/index.ts"],
+            "@nxngemployees/ui-employees": ["libs/ui-employees/src/index.ts"],
+            "@nxngemployees/ui-employees/src/lib/ui-employees-detailed": [
+                "libs/ui-employees/src/lib/ui-employees-detailed/src/index.ts"
+            ]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

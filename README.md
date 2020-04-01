@@ -1,9 +1,11 @@
 # Nxngemployees ![](https://travis-ci.com/ruswc/nxngemployees.svg?branch=master&status=passed)
 
 ## Checking the result
+
 The result can be checked by the link: https://ruswc.github.io/nxngemployees/
 
 ## Running the test
+
 `ng test --code-coverage`
 
 ##
