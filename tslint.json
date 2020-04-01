@@ -6,6 +6,7 @@
   "linterOptions": {
     "exclude": ["**/*"]
   },
+  "extends": ["tslint:recommended", "tslint-angular", "tslint-config-prettier"],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,

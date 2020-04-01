@@ -18,9 +18,6 @@
       "tags": [],
       "implicitDependencies": ["ngnxemployees"]
     },
-    "ui": {
-      "tags": []
-    },
     "ui-header": {
       "tags": []
     },
@@ -28,9 +25,6 @@
       "tags": []
     },
     "ui-employees": {
-      "tags": []
-    },
-    "ui-employees-src-lib-ui-employees-detailed": {
       "tags": []
     }
   }
