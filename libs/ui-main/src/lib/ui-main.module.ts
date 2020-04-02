@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
+import { RouterModule, Routes } from '@angular/router';
 import { UiHeaderModule } from '@nxngemployees/ui-header';
-import { UiEmployeesModule } from '@nxngemployees/ui-employees';
-import { AppRoutingModule } from './app-routing.module';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: MainComponent,
+        loadChildren: () =>
+            import('@nxngemployees/ui-employees').then(
+                module => module.UiEmployeesModule
+            )
+    }
+];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        UiHeaderModule,
-        UiEmployeesModule,
-        AppRoutingModule
-    ],
-    declarations: [MainComponent],
-    exports: [MainComponent]
+    imports: [CommonModule, UiHeaderModule, RouterModule.forChild(routes)],
+    declarations: [MainComponent]
 })
 export class UiMainModule {}

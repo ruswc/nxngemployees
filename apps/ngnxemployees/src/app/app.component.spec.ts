@@ -1,8 +1,6 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { UiEmployeesModule } from '@nxngemployees/ui-employees';
-import { UiMainModule } from '@nxngemployees/ui-main';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,9 +17,6 @@ describe('AppComponent', () => {
         TestBed.configureTestingModule({
             declarations: [AppComponent],
             imports: [
-                UiEmployeesModule,
-                UiMainModule,
-                UiEmployeesModule,
                 CommonModule,
                 MatIconModule,
                 MatListModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Employees } from '../employees.service';
 import { EmployeesService } from '../employees.service';
 

@@ -13,6 +13,8 @@ install:
     - npm install
 
 script:
+    - npm run-script lint
+    - npm run-script test
     - npm run-script build
 
 deploy:
