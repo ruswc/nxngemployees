@@ -26,6 +26,9 @@
         },
         "ui-employees": {
             "tags": []
+        },
+        "shared": {
+            "tags": []
         }
     }
 }

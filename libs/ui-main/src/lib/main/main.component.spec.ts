@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { MainComponent } from './main.component';
 import { HeaderComponent } from '@nxngemployees/ui-header';
-// import { HeaderComponent } from '../../../../ui-header/src/lib/header/header.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 

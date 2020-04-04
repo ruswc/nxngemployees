@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataTransmissionService } from '@nxngemployees/shared';
 
 @Component({
     selector: 'nxngemployees-header',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    constructor() {}
+    // path = this.dataTransmissionService.getHistoryPath();
 
-    ngOnInit(): void {}
+    constructor(public dataTransmissionService: DataTransmissionService) {}
+
+    ngOnInit(): void {
+        // this.path = this.dataTransmissionService.getHistoryPath();
+    }
 }

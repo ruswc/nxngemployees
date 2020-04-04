@@ -22,7 +22,8 @@
             "@nxngemployees/ui-employees": ["libs/ui-employees/src/index.ts"],
             "@nxngemployees/ui-employees/src/lib/ui-employees-detailed": [
                 "libs/ui-employees/src/lib/ui-employees-detailed/src/index.ts"
-            ]
+            ],
+            "@nxngemployees/shared": ["libs/shared/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

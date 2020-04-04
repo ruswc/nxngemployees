@@ -1,35 +1,46 @@
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
 
-<div class="mat-elevation-z2 list" *ngIf="employee">
-    <div class="list-title">
-        <button mat-icon-button routerLink="/employees">
-            <mat-icon>keyboard_arrow_left</mat-icon>
-        </button>
-    </div>
-    <mat-list>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="ID"
-            [data]="employee.id"
-        ></nxngemployees-detailed-mat-list-item>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="Name"
-            [data]="employee.name"
-        ></nxngemployees-detailed-mat-list-item>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="Username"
-            [data]="employee.username"
-        ></nxngemployees-detailed-mat-list-item>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="Email"
-            [data]="employee.email"
-        ></nxngemployees-detailed-mat-list-item>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="Phone"
-            [data]="employee.phone"
-        ></nxngemployees-detailed-mat-list-item>
-        <nxngemployees-detailed-mat-list-item
-            subtitle="Website"
-            [data]="employee.website"
-        ></nxngemployees-detailed-mat-list-item>
-    </mat-list>
-</div>
+<mat-card class="" *ngIf="employee">
+    <mat-card-title>
+        <span class="list-title">{{ employee.name }}</span>
+        <div class="button-container">
+            <button
+                mat-icon-button
+                routerLink="/employees"
+                matTooltip="Go to the employees list"
+                matTooltipPosition="right"
+            >
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+        </div>
+    </mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content>
+        <mat-list>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="ID"
+                [data]="employee.id"
+            ></nxngemployees-detailed-mat-list-item>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="Name"
+                [data]="employee.name"
+            ></nxngemployees-detailed-mat-list-item>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="Username"
+                [data]="employee.username"
+            ></nxngemployees-detailed-mat-list-item>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="Email"
+                [data]="employee.email"
+            ></nxngemployees-detailed-mat-list-item>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="Phone"
+                [data]="employee.phone"
+            ></nxngemployees-detailed-mat-list-item>
+            <nxngemployees-detailed-mat-list-item
+                subtitle="Website"
+                [data]="employee.website"
+            ></nxngemployees-detailed-mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

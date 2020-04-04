@@ -7,4 +7,16 @@
     <div class="link" routerLink="/employees">
         <span>Employees</span>
     </div>
+    <div class="path" *ngIf="dataTransmissionService.getHistoryPath()">
+        <span class="material-icons">
+            chevron_right
+        </span>
+        <span
+            matTooltip="Current employee"
+            matTooltipPosition="below"
+            class="mat-subheading-1"
+        >
+            {{ dataTransmissionService.getHistoryPath() }}
+        </span>
+    </div>
 </mat-toolbar>

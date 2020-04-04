@@ -9,6 +9,7 @@ import { SortAscendingPipe } from './pipes/sort-ascending.pipe';
 import { RouterModule } from '@angular/router';
 import { MatSpinner } from '@angular/material/progress-spinner';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatCardModule } from '@angular/material/card';
 
 describe('EmployeesListComponent', () => {
     let component: EmployeesListComponent;
@@ -27,7 +28,8 @@ describe('EmployeesListComponent', () => {
                 MatListModule,
                 MatIconModule,
                 RouterModule,
-                HttpClientTestingModule
+                HttpClientTestingModule,
+                MatCardModule
             ]
         }).compileComponents();
     }));

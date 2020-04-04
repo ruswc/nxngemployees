@@ -8,11 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoaderComponent } from '../loader/loader.component';
 import { DetailedMatListItemComponent } from './detailed-mat-list-item/detailed-mat-list-item.component';
 
-import { EmployeesListComponent } from '../employees-list/employees-list.component';
-import { SortDescendingPipe } from '../employees-list/pipes/sort-descending.pipe';
-import { SortAscendingPipe } from '../employees-list/pipes/sort-ascending.pipe';
 import { MatSpinner } from '@angular/material/progress-spinner';
-import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 describe('EmployeeDetailedComponent', () => {
     let component: EmployeeDetailedComponent;
@@ -30,7 +27,8 @@ describe('EmployeeDetailedComponent', () => {
                 MatListModule,
                 MatIconModule,
                 HttpClientTestingModule,
-                RouterTestingModule
+                RouterTestingModule,
+                MatCardModule
             ]
         }).compileComponents();
     }));
@@ -45,37 +43,3 @@ describe('EmployeeDetailedComponent', () => {
         expect(component).toBeTruthy();
     });
 });
-
-/*
-describe('EmployeesDetailedComponent', () => {
-  let component: EmployeeDetailedComponent;
-  let fixture: ComponentFixture<EmployeeDetailedComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        EmployeesListComponent,
-        LoaderComponent,
-        SortDescendingPipe,
-        SortAscendingPipe,
-        MatSpinner
-      ],
-      imports: [
-        MatListModule,
-        MatIconModule,
-        RouterModule,
-        HttpClientTestingModule
-      ]
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EmployeesListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});*/

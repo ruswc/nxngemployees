@@ -7,6 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { SortAscendingPipe } from './employees-list/pipes/sort-ascending.pipe';
 import { SortDescendingPipe } from './employees-list/pipes/sort-descending.pipe';
@@ -31,6 +34,9 @@ const routes: Routes = [
         HttpClientModule,
         MatButtonModule,
         MatProgressSpinnerModule,
+        MatTooltipModule,
+        MatCardModule,
+        MatDividerModule,
         RouterModule.forChild(routes)
     ],
     declarations: [

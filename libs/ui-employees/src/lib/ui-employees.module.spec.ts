@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-// import { AppRoutingModule } from '@nxngemployees/ui-main';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('UiEmployeesModule', () => {
@@ -18,7 +17,6 @@ describe('UiEmployeesModule', () => {
                 MatListModule,
                 HttpClientModule,
                 MatButtonModule,
-                // AppRoutingModule,
                 MatProgressSpinnerModule
             ]
         }).compileComponents();

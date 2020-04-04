@@ -1,15 +1,14 @@
-.mat-line,
-.mat-subheader {
-    padding: 0;
-    height: min-content;
-}
-
-.mat-subheader {
-    height: min-content;
-    margin-top: unset !important;
-}
-
 .mat-list-item {
     height: unset !important;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
+}
+
+.mat-list-item .mat-line:nth-child(n + 1) {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.mat-list-item .mat-line:nth-child(n + 2) {
+    font-size: unset;
+    color: rgba(0, 0, 0, 0.87);
 }

@@ -1,24 +1,41 @@
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
 
-<div class="mat-elevation-z2 list" *ngIf="!loader">
-    <div class="list-title">
-        <button mat-icon-button (click)="sort = 'asc'">
-            <mat-icon>keyboard_arrow_up</mat-icon>
-        </button>
-        <button mat-icon-button (click)="sort = 'desc'">
-            <mat-icon>keyboard_arrow_down</mat-icon>
-        </button>
-    </div>
-    <mat-nav-list>
-        <mat-list-item
-            *ngFor="
-                let employee of employees
-                    | sortAscending: sort === 'asc'
-                    | sortDescending: sort === 'desc'
-            "
-            routerLink="/employees/{{ employee.id }}"
-        >
-            {{ employee.name }}
-        </mat-list-item>
-    </mat-nav-list>
-</div>
+<mat-card class="employees-list" *ngIf="!loader">
+    <mat-card-title>
+        <span class="list-title"> Employees list</span>
+
+        <div class="button-container">
+            <button
+                mat-icon-button
+                (click)="sort = 'asc'"
+                matTooltip="Sort in ascending order"
+                matTooltipPosition="left"
+            >
+                <mat-icon>keyboard_arrow_up</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                (click)="sort = 'desc'"
+                matTooltip="Sort in descending order"
+                matTooltipPosition="right"
+            >
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+        </div>
+    </mat-card-title>
+    <mat-divider inset></mat-divider>
+    <mat-card-content>
+        <mat-nav-list>
+            <mat-list-item
+                *ngFor="
+                    let employee of employees
+                        | sortAscending: sort === 'asc'
+                        | sortDescending: sort === 'desc'
+                "
+                routerLink="/employees/{{ employee.id }}"
+            >
+                {{ employee.name }}
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-card-content>
+</mat-card>

@@ -1,33 +1,19 @@
-.mat-line,
-.mat-subheader {
-    padding: 0;
-}
-
-.mat-subheader {
-    height: min-content;
-    margin-top: unset !important;
-}
-
-.spinner {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.list {
+mat-card {
     width: fit-content;
     margin: 2rem auto;
-    padding: 0 2rem 2rem 2rem;
-    border-radius: 0.4rem;
+}
+
+mat-card-title {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .list-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 1rem;
+    margin-left: 1rem;
+}
+
+.button-container {
+    margin-left: 2rem;
 }
