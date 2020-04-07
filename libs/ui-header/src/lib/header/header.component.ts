@@ -1,17 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { DataTransmissionService } from '@nxngemployees/shared';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { HeaderEmployeeNameService } from '@nxngemployees/shared';
 
 @Component({
     selector: 'nxngemployees-header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
+    styleUrls: ['./header.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
-    // path = this.dataTransmissionService.getHistoryPath();
-
-    constructor(public dataTransmissionService: DataTransmissionService) {}
-
-    ngOnInit(): void {
-        // this.path = this.dataTransmissionService.getHistoryPath();
-    }
+    constructor(public headerEmployeeNameService: HeaderEmployeeNameService) {}
+    ngOnInit(): void {}
 }

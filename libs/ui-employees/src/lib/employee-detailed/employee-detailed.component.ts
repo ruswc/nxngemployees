@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Employees } from '../employees.service';
 import { EmployeesService } from '../employees.service';
 import { ActivatedRoute } from '@angular/router';
-import { DataTransmissionService } from '@nxngemployees/shared';
+import { HeaderEmployeeNameService } from '@nxngemployees/shared';
 
 @Component({
     selector: 'nxngemployees-employee-detailed',
@@ -17,7 +17,7 @@ export class EmployeeDetailedComponent implements OnInit, OnDestroy {
     constructor(
         private employeesService: EmployeesService,
         private route: ActivatedRoute,
-        private dataTransmissionService: DataTransmissionService
+        private headerEmployeeNameService: HeaderEmployeeNameService
     ) {}
 
     ngOnInit() {
@@ -29,11 +29,11 @@ export class EmployeeDetailedComponent implements OnInit, OnDestroy {
         this.employeesService.getEmployee(this.id).subscribe(response => {
             this.employee = response;
             this.loader = false;
-            this.dataTransmissionService.setHistoryPath(this.employee.name);
+            this.headerEmployeeNameService.setEmployeeName(this.employee.name);
         });
     }
 
     ngOnDestroy() {
-        this.dataTransmissionService.clearHistoryPath();
+        this.headerEmployeeNameService.setEmployeeName('');
     }
 }

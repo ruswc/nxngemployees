@@ -1,3 +1,3 @@
-import { DataTransmissionService } from './lib/data-transmission.service';
-export { DataTransmissionService };
+import { HeaderEmployeeNameService } from './lib/header-employee-name.service';
+export { HeaderEmployeeNameService };
 export * from './lib/shared.module';

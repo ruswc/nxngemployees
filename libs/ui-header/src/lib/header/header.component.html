@@ -7,7 +7,10 @@
     <div class="link" routerLink="/employees">
         <span>Employees</span>
     </div>
-    <div class="path" *ngIf="dataTransmissionService.getHistoryPath()">
+    <div
+        class="path"
+        *ngIf="headerEmployeeNameService.getEmployeeName() | async"
+    >
         <span class="material-icons">
             chevron_right
         </span>
@@ -16,7 +19,7 @@
             matTooltipPosition="below"
             class="mat-subheading-1"
         >
-            {{ dataTransmissionService.getHistoryPath() }}
+            {{ headerEmployeeNameService.getEmployeeName() | async }}
         </span>
     </div>
 </mat-toolbar>
