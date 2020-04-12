@@ -9,17 +9,19 @@
     </div>
     <div
         class="path"
-        *ngIf="headerEmployeeNameService.getEmployeeName() | async"
+        *ngIf="
+            headerEmployeeNameService.getEmployeeName() | async as employeeName
+        "
     >
-        <span class="material-icons">
+        <mat-icon>
             chevron_right
-        </span>
+        </mat-icon>
         <span
             matTooltip="Current employee"
             matTooltipPosition="below"
             class="mat-subheading-1"
         >
-            {{ headerEmployeeNameService.getEmployeeName() | async }}
+            {{ employeeName }}
         </span>
     </div>
 </mat-toolbar>

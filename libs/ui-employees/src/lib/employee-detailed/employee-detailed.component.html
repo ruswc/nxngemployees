@@ -1,4 +1,8 @@
+<!--{{ employee | json}}-->
+{{ edited$ | async }}
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
+
+<nxngemployees-employee-edit-form></nxngemployees-employee-edit-form>
 
 <mat-card class="" *ngIf="employee">
     <mat-card-title>
@@ -8,9 +12,17 @@
                 mat-icon-button
                 routerLink="/employees"
                 matTooltip="Go to the employees list"
-                matTooltipPosition="right"
+                matTooltipPosition="above"
             >
                 <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                matTooltip="Edit this employee"
+                matTooltipPosition="below"
+                (click)="employeeEditDataServiceService.showEditForm()"
+            >
+                <mat-icon>create</mat-icon>
             </button>
         </div>
     </mat-card-title>

@@ -1,0 +1,150 @@
+<div class="form-wrapper" *ngIf="hide$ | async">
+    <mat-card class="">
+        <mat-card-title>
+            <span class="list-title">
+                {{ headerEmployeeNameService.employeeName$ | async }}
+            </span>
+            <div class="button-container">
+                <button
+                    mat-icon-button
+                    matTooltip="Edit this employee"
+                    matTooltipPosition="below"
+                    (click)="
+                        employeeEditDataServiceService.hideEditForm();
+                        initForm()
+                    "
+                >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </mat-card-title>
+        <mat-divider inset></mat-divider>
+        <mat-card-content>
+            <form class="edit-form">
+                <mat-form-field>
+                    <label for="id"></label>
+                    <mat-label>Id</mat-label>
+                    <input
+                        matInput
+                        disabled
+                        id="id"
+                        name="id"
+                        type="text"
+                        [(ngModel)]="theEmployeeBehaviorSubject.id"
+                        [errorStateMatcher]="matcher"
+                    />
+                </mat-form-field>
+                <mat-form-field style="width: 100%">
+                    <label for="name"></label>
+                    <mat-label>Name</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        id="name"
+                        name="name"
+                        [(ngModel)]="theEmployeeBehaviorSubject.name"
+                        [formControl]="nameFormControl"
+                        [errorStateMatcher]="matcher"
+                    />
+                    <mat-error *ngIf="nameFormControl.hasError('required')">
+                        This field is erquired
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <label for="username"></label>
+                    <mat-label>Username</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        id="username"
+                        name="username"
+                        [(ngModel)]="theEmployeeBehaviorSubject.username"
+                        [formControl]="usernamenameFormControl"
+                        [errorStateMatcher]="matcher"
+                    />
+                    <mat-error
+                        *ngIf="usernamenameFormControl.hasError('required')"
+                    >
+                        This field is erquired
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <label for="email"></label>
+                    <mat-label>Email</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        id="email"
+                        name="email"
+                        [(ngModel)]="theEmployeeBehaviorSubject.email"
+                        [formControl]="emailFormControl"
+                        [errorStateMatcher]="matcher"
+                    />
+                    <mat-error
+                        *ngIf="
+                            emailFormControl.hasError('email') &&
+                            !emailFormControl.hasError('required')
+                        "
+                    >
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        This field is erquired
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <label for="phone"></label>
+                    <mat-label>Phone</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        [(ngModel)]="theEmployeeBehaviorSubject.phone"
+                        [formControl]="phoneFormControl"
+                        [errorStateMatcher]="matcher"
+                    />
+                    <mat-error *ngIf="phoneFormControl.hasError('required')">
+                        This field is erquired
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <label for="website"></label>
+                    <mat-label>Website</mat-label>
+                    <input
+                        matInput
+                        type="text"
+                        id="website"
+                        name="website"
+                        [(ngModel)]="theEmployeeBehaviorSubject.website"
+                        [formControl]="websiteFormControl"
+                        [errorStateMatcher]="matcher"
+                    />
+                    <mat-error *ngIf="websiteFormControl.hasError('required')">
+                        This field is erquired
+                    </mat-error>
+                </mat-form-field>
+                <div class="submit-button-container">
+                    <button
+                        mat-flat-button
+                        color="primary"
+                        type="button"
+                        [disabled]="
+                            !nameFormControl.valid ||
+                            !usernamenameFormControl.valid ||
+                            !emailFormControl.valid ||
+                            !phoneFormControl.valid ||
+                            !websiteFormControl.valid
+                        "
+                        (click)="
+                            saveChanges();
+                            employeeEditDataServiceService.hideEditForm()
+                        "
+                    >
+                        Save changes
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

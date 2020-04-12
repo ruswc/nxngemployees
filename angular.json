@@ -262,6 +262,41 @@
                     "style": "scss"
                 }
             }
+        },
+        "employees-forms": {
+            "projectType": "library",
+            "root": "libs/employees-forms",
+            "sourceRoot": "libs/employees-forms/src",
+            "prefix": "nxngemployees",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/employees-forms/tsconfig.lib.json",
+                            "libs/employees-forms/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/employees-forms/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/employees-forms/jest.config.js",
+                        "tsConfig": "libs/employees-forms/tsconfig.spec.json",
+                        "passWithNoTests": true,
+                        "setupFile": "libs/employees-forms/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            }
         }
     },
     "cli": {

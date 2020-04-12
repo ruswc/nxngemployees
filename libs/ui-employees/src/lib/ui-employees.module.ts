@@ -18,6 +18,8 @@ import { DetailedMatListItemComponent } from './employee-detailed/detailed-mat-l
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { LoaderComponent } from './loader/loader.component';
 
+import { EmployeesFormsModule } from '@nxngemployees/employees-forms';
+
 const routes: Routes = [
     {
         path: '',
@@ -37,6 +39,7 @@ const routes: Routes = [
         MatTooltipModule,
         MatCardModule,
         MatDividerModule,
+        EmployeesFormsModule,
         RouterModule.forChild(routes)
     ],
     declarations: [
