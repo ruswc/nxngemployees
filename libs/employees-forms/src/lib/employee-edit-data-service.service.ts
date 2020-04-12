@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-    AsyncSubject,
-    BehaviorSubject,
-    Observable,
-    ReplaySubject,
-    Subject
-} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export interface TheEmployee {
     id: number;
@@ -21,8 +15,9 @@ export interface TheEmployee {
 })
 export class EmployeeEditDataServiceService {
     editFormState$ = new BehaviorSubject(false);
+    addFormState$ = new BehaviorSubject(false);
 
-    behaviorSubject$ = new BehaviorSubject(null);
+    theEmployeeSubject$ = new BehaviorSubject(null);
 
     constructor() {}
 
@@ -34,7 +29,15 @@ export class EmployeeEditDataServiceService {
         this.editFormState$.next(false);
     }
 
+    showAddForm(): void {
+        this.addFormState$.next(true);
+    }
+
+    hideAddForm(): void {
+        this.addFormState$.next(false);
+    }
+
     setEmployee(employee): void {
-        this.behaviorSubject$.next(employee);
+        this.theEmployeeSubject$.next(employee);
     }
 }

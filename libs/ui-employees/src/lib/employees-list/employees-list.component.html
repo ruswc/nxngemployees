@@ -1,3 +1,5 @@
+<nxngemployees-employee-add-form></nxngemployees-employee-add-form>
+
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
 
 <mat-card class="employees-list" *ngIf="!loader">
@@ -9,7 +11,7 @@
                 mat-icon-button
                 (click)="sort = 'asc'"
                 matTooltip="Sort in ascending order"
-                matTooltipPosition="left"
+                matTooltipPosition="above"
             >
                 <mat-icon>keyboard_arrow_up</mat-icon>
             </button>
@@ -17,9 +19,17 @@
                 mat-icon-button
                 (click)="sort = 'desc'"
                 matTooltip="Sort in descending order"
-                matTooltipPosition="right"
+                matTooltipPosition="below"
             >
                 <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                matTooltip="Add a new employee"
+                matTooltipPosition="right"
+                (click)="employeeEditDataServiceService.showAddForm()"
+            >
+                <mat-icon>add</mat-icon>
             </button>
         </div>
     </mat-card-title>

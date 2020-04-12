@@ -30,7 +30,7 @@
                         id="id"
                         name="id"
                         type="text"
-                        [(ngModel)]="theEmployeeBehaviorSubject.id"
+                        [(ngModel)]="employee.id"
                         [errorStateMatcher]="matcher"
                     />
                 </mat-form-field>
@@ -42,7 +42,7 @@
                         type="text"
                         id="name"
                         name="name"
-                        [(ngModel)]="theEmployeeBehaviorSubject.name"
+                        [(ngModel)]="employee.name"
                         [formControl]="nameFormControl"
                         [errorStateMatcher]="matcher"
                     />
@@ -58,7 +58,7 @@
                         type="text"
                         id="username"
                         name="username"
-                        [(ngModel)]="theEmployeeBehaviorSubject.username"
+                        [(ngModel)]="employee.username"
                         [formControl]="usernamenameFormControl"
                         [errorStateMatcher]="matcher"
                     />
@@ -76,7 +76,7 @@
                         type="text"
                         id="email"
                         name="email"
-                        [(ngModel)]="theEmployeeBehaviorSubject.email"
+                        [(ngModel)]="employee.email"
                         [formControl]="emailFormControl"
                         [errorStateMatcher]="matcher"
                     />
@@ -100,7 +100,7 @@
                         type="text"
                         id="phone"
                         name="phone"
-                        [(ngModel)]="theEmployeeBehaviorSubject.phone"
+                        [(ngModel)]="employee.phone"
                         [formControl]="phoneFormControl"
                         [errorStateMatcher]="matcher"
                     />
@@ -116,7 +116,7 @@
                         type="text"
                         id="website"
                         name="website"
-                        [(ngModel)]="theEmployeeBehaviorSubject.website"
+                        [(ngModel)]="employee.website"
                         [formControl]="websiteFormControl"
                         [errorStateMatcher]="matcher"
                     />

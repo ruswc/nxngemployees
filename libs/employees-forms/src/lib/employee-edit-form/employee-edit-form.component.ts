@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit
+} from '@angular/core';
 import { EmployeeEditDataServiceService } from '@nxngemployees/employees-forms';
 import { HeaderEmployeeNameService } from '@nxngemployees/shared';
 import { FormControl, Validators } from '@angular/forms';
 import { MyErrorStateMatcher } from './my-error-state-matcher';
 
+export interface Employee {
+    id: number;
+    name: string;
+    username: string;
+    email?: string;
+    phone?: string;
+    website?: string;
+}
+
 @Component({
     selector: 'nxngemployees-employee-edit-form',
     templateUrl: './employee-edit-form.component.html',
-    styleUrls: ['./employee-edit-form.component.scss']
+    styleUrls: ['./employee-edit-form.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeEditFormComponent implements OnInit {
+    @Input() employee: Employee;
+
     hide$ = this.employeeEditDataServiceService.editFormState$;
 
     matcher = new MyErrorStateMatcher();
@@ -22,15 +39,6 @@ export class EmployeeEditFormComponent implements OnInit {
         Validators.email
     ]);
 
-    theEmployeeBehaviorSubject = {
-        id: undefined,
-        name: undefined,
-        username: undefined,
-        email: undefined,
-        phone: undefined,
-        website: undefined
-    };
-
     constructor(
         public employeeEditDataServiceService: EmployeeEditDataServiceService,
         public headerEmployeeNameService: HeaderEmployeeNameService
@@ -41,25 +49,17 @@ export class EmployeeEditFormComponent implements OnInit {
     }
 
     initForm() {
-        this.employeeEditDataServiceService.behaviorSubject$.subscribe(
+        this.employeeEditDataServiceService.theEmployeeSubject$.subscribe(
             value => {
                 if (value) {
-                    this.theEmployeeBehaviorSubject.id = value.id;
-                    this.theEmployeeBehaviorSubject.name = value.name;
-                    this.theEmployeeBehaviorSubject.username = value.username;
-                    this.theEmployeeBehaviorSubject.email = value.email;
-                    this.theEmployeeBehaviorSubject.phone = value.phone;
-                    this.theEmployeeBehaviorSubject.website = value.website;
+                    this.employee = value;
                 }
             }
         );
     }
 
     saveChanges() {
-        this.employeeEditDataServiceService.behaviorSubject$.complete();
-        console.log(this.theEmployeeBehaviorSubject);
-        this.employeeEditDataServiceService.setEmployee(
-            this.theEmployeeBehaviorSubject
-        );
+        this.employeeEditDataServiceService.setEmployee(this.employee);
+        this.headerEmployeeNameService.setEmployeeName(this.employee.name);
     }
 }

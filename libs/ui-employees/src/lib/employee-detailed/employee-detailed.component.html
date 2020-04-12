@@ -1,10 +1,8 @@
-<!--{{ employee | json}}-->
-{{ edited$ | async }}
 <nxngemployees-loader *ngIf="loader"></nxngemployees-loader>
-
-<nxngemployees-employee-edit-form></nxngemployees-employee-edit-form>
-
-<mat-card class="" *ngIf="employee">
+<nxngemployees-employee-edit-form
+    *ngIf="!loader"
+></nxngemployees-employee-edit-form>
+<mat-card class="" *ngIf="employee && !loader">
     <mat-card-title>
         <span class="list-title">{{ employee.name }}</span>
         <div class="button-container">

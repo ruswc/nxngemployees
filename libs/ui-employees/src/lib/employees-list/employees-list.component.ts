@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employees } from '../employees.service';
 import { EmployeesService } from '../employees.service';
+import { EmployeeEditDataServiceService } from '@nxngemployees/employees-forms';
 
 @Component({
     selector: 'nxngemployees-employees-list',
@@ -13,7 +14,10 @@ export class EmployeesListComponent implements OnInit {
 
     employees: Employees[] = [];
 
-    constructor(private employeesService: EmployeesService) {}
+    constructor(
+        private employeesService: EmployeesService,
+        public employeeEditDataServiceService: EmployeeEditDataServiceService
+    ) {}
 
     ngOnInit(): void {
         this.loader = true;

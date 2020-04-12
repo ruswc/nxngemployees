@@ -1,0 +1,39 @@
+<div class="form-wrapper" *ngIf="hide$ | async">
+    <mat-card class="">
+        <mat-card-title>
+            <span class="list-title">
+                Add a new employee
+            </span>
+            <div class="button-container">
+                <button
+                    mat-icon-button
+                    matTooltip="Edit this employee"
+                    matTooltipPosition="below"
+                    (click)="employeeEditDataServiceService.hideAddForm()"
+                >
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </mat-card-title>
+        <mat-divider inset></mat-divider>
+        <mat-card-content>
+            <form class="edit-form">
+                <mat-form-field>
+                    <label for="id"></label>
+                    <mat-label>Id</mat-label>
+                    <input matInput disabled id="id" name="id" type="text" />
+                </mat-form-field>
+                <mat-form-field style="width: 100%">
+                    <label for="name"></label>
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" id="name" name="name" />
+                </mat-form-field>
+                <div class="submit-button-container">
+                    <button mat-flat-button color="primary" type="button">
+                        Add the employee
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

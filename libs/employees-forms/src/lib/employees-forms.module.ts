@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { EmployeeAddFormComponent } from './employee-add-form/employee-add-form.component';
 
 @NgModule({
     imports: [
@@ -26,7 +27,7 @@ import { MatInputModule } from '@angular/material/input';
         MatInputModule,
         ReactiveFormsModule
     ],
-    declarations: [EmployeeEditFormComponent],
-    exports: [EmployeeEditFormComponent]
+    declarations: [EmployeeEditFormComponent, EmployeeAddFormComponent],
+    exports: [EmployeeEditFormComponent, EmployeeAddFormComponent]
 })
 export class EmployeesFormsModule {}
