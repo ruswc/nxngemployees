@@ -9,7 +9,7 @@
                     mat-icon-button
                     matTooltip="Close the form"
                     matTooltipPosition="below"
-                    (click)="employeeEditDataService.hideAddForm()"
+                    (click)="employeeEditDataService.hideAddForm(); initForm()"
                 >
                     <mat-icon>close</mat-icon>
                 </button>
