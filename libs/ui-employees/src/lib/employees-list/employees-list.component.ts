@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employees } from '../employees.service';
 import { EmployeesService } from '../employees.service';
-import { EmployeeEditDataServiceService } from '@nxngemployees/employees-forms';
+import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 
 @Component({
     selector: 'nxngemployees-employees-list',
@@ -16,12 +16,16 @@ export class EmployeesListComponent implements OnInit {
 
     constructor(
         private employeesService: EmployeesService,
-        public employeeEditDataServiceService: EmployeeEditDataServiceService
+        public employeeEditDataService: EmployeeEditDataService
     ) {}
 
     ngOnInit(): void {
         this.loader = true;
         this.getEmployees();
+
+        this.employeeEditDataService.theNewEmployee$.subscribe(value => {
+            this.employees.push(value);
+        });
     }
 
     getEmployees(): void {

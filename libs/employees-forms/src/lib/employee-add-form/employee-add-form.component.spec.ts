@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployeeAddFormComponent } from './employee-add-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('EmployeeAddFormComponent', () => {
     let component: EmployeeAddFormComponent;
@@ -8,7 +13,15 @@ describe('EmployeeAddFormComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [EmployeeAddFormComponent]
+            declarations: [EmployeeAddFormComponent],
+            imports: [
+                MatInputModule,
+                MatIconModule,
+                MatCardModule,
+                MatDividerModule,
+                FormsModule,
+                ReactiveFormsModule
+            ]
         }).compileComponents();
     }));
 

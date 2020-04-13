@@ -13,11 +13,12 @@ export interface TheEmployee {
 @Injectable({
     providedIn: 'root'
 })
-export class EmployeeEditDataServiceService {
+export class EmployeeEditDataService {
     editFormState$ = new BehaviorSubject(false);
     addFormState$ = new BehaviorSubject(false);
 
     theEmployeeSubject$ = new BehaviorSubject(null);
+    theNewEmployee$ = new BehaviorSubject(null);
 
     constructor() {}
 
@@ -39,5 +40,9 @@ export class EmployeeEditDataServiceService {
 
     setEmployee(employee): void {
         this.theEmployeeSubject$.next(employee);
+    }
+
+    addEmployee(employee): void {
+        this.theNewEmployee$.next(employee);
     }
 }

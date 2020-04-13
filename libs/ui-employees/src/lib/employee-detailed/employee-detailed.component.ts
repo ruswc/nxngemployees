@@ -3,7 +3,7 @@ import { Employees } from '../employees.service';
 import { EmployeesService } from '../employees.service';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderEmployeeNameService } from '@nxngemployees/shared';
-import { EmployeeEditDataServiceService } from '@nxngemployees/employees-forms';
+import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 
 @Component({
     selector: 'nxngemployees-employee-detailed',
@@ -19,22 +19,20 @@ export class EmployeeDetailedComponent implements OnInit, OnDestroy {
         private employeesService: EmployeesService,
         private route: ActivatedRoute,
         private headerEmployeeNameService: HeaderEmployeeNameService,
-        private employeeEditDataServiceService: EmployeeEditDataServiceService
+        private employeeEditDataService: EmployeeEditDataService
     ) {}
 
     ngOnInit() {
         this.loader = true;
-        this.employeeEditDataServiceService.theEmployeeSubject$.subscribe(
-            value => {
-                this.employee = value;
-            }
-        );
+        this.employeeEditDataService.theEmployeeSubject$.subscribe(value => {
+            this.employee = value;
+        });
         this.getEmployee();
     }
 
     getEmployee() {
         this.employeesService.getEmployee(this.id).subscribe(response => {
-            this.employeeEditDataServiceService.setEmployee(response);
+            this.employeeEditDataService.setEmployee(response);
             this.loader = false;
             this.headerEmployeeNameService.setEmployeeName(this.employee.name);
         });

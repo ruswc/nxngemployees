@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { EmployeeDetailedComponent } from './employee-detailed.component';
+import { EmployeeDetailedComponent } from '@nxngemployees/ui-employees';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { LoaderComponent } from '../loader/loader.component';
@@ -10,6 +10,8 @@ import { DetailedMatListItemComponent } from './detailed-mat-list-item/detailed-
 
 import { MatSpinner } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+
+import { EmployeesFormsModule } from '@nxngemployees/employees-forms';
 
 describe('EmployeeDetailedComponent', () => {
     let component: EmployeeDetailedComponent;
@@ -28,7 +30,8 @@ describe('EmployeeDetailedComponent', () => {
                 MatIconModule,
                 HttpClientTestingModule,
                 RouterTestingModule,
-                MatCardModule
+                MatCardModule,
+                EmployeesFormsModule
             ]
         }).compileComponents();
     }));

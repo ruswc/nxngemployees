@@ -11,6 +11,8 @@ import { MatSpinner } from '@angular/material/progress-spinner';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatCardModule } from '@angular/material/card';
 
+import { EmployeesFormsModule } from '@nxngemployees/employees-forms';
+
 describe('EmployeesListComponent', () => {
     let component: EmployeesListComponent;
     let fixture: ComponentFixture<EmployeesListComponent>;
@@ -29,7 +31,8 @@ describe('EmployeesListComponent', () => {
                 MatIconModule,
                 RouterModule,
                 HttpClientTestingModule,
-                MatCardModule
+                MatCardModule,
+                EmployeesFormsModule
             ]
         }).compileComponents();
     }));

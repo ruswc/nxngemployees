@@ -4,10 +4,9 @@ import {
     Input,
     OnInit
 } from '@angular/core';
-import { EmployeeEditDataServiceService } from '@nxngemployees/employees-forms';
+import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 import { HeaderEmployeeNameService } from '@nxngemployees/shared';
 import { FormControl, Validators } from '@angular/forms';
-import { MyErrorStateMatcher } from './my-error-state-matcher';
 
 export interface Employee {
     id: number;
@@ -27,9 +26,8 @@ export interface Employee {
 export class EmployeeEditFormComponent implements OnInit {
     @Input() employee: Employee;
 
-    hide$ = this.employeeEditDataServiceService.editFormState$;
+    hide$ = this.employeeEditDataService.editFormState$;
 
-    matcher = new MyErrorStateMatcher();
     nameFormControl = new FormControl('', [Validators.required]);
     usernamenameFormControl = new FormControl('', [Validators.required]);
     phoneFormControl = new FormControl('', [Validators.required]);
@@ -40,7 +38,7 @@ export class EmployeeEditFormComponent implements OnInit {
     ]);
 
     constructor(
-        public employeeEditDataServiceService: EmployeeEditDataServiceService,
+        public employeeEditDataService: EmployeeEditDataService,
         public headerEmployeeNameService: HeaderEmployeeNameService
     ) {}
 
@@ -49,17 +47,15 @@ export class EmployeeEditFormComponent implements OnInit {
     }
 
     initForm() {
-        this.employeeEditDataServiceService.theEmployeeSubject$.subscribe(
-            value => {
-                if (value) {
-                    this.employee = value;
-                }
+        this.employeeEditDataService.theEmployeeSubject$.subscribe(value => {
+            if (value) {
+                this.employee = value;
             }
-        );
+        });
     }
 
     saveChanges() {
-        this.employeeEditDataServiceService.setEmployee(this.employee);
+        this.employeeEditDataService.setEmployee(this.employee);
         this.headerEmployeeNameService.setEmployeeName(this.employee.name);
     }
 }

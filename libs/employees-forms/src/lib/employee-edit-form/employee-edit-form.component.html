@@ -9,10 +9,7 @@
                     mat-icon-button
                     matTooltip="Edit this employee"
                     matTooltipPosition="below"
-                    (click)="
-                        employeeEditDataServiceService.hideEditForm();
-                        initForm()
-                    "
+                    (click)="employeeEditDataService.hideEditForm(); initForm()"
                 >
                     <mat-icon>close</mat-icon>
                 </button>
@@ -31,7 +28,6 @@
                         name="id"
                         type="text"
                         [(ngModel)]="employee.id"
-                        [errorStateMatcher]="matcher"
                     />
                 </mat-form-field>
                 <mat-form-field style="width: 100%">
@@ -44,7 +40,6 @@
                         name="name"
                         [(ngModel)]="employee.name"
                         [formControl]="nameFormControl"
-                        [errorStateMatcher]="matcher"
                     />
                     <mat-error *ngIf="nameFormControl.hasError('required')">
                         This field is erquired
@@ -60,7 +55,6 @@
                         name="username"
                         [(ngModel)]="employee.username"
                         [formControl]="usernamenameFormControl"
-                        [errorStateMatcher]="matcher"
                     />
                     <mat-error
                         *ngIf="usernamenameFormControl.hasError('required')"
@@ -78,7 +72,6 @@
                         name="email"
                         [(ngModel)]="employee.email"
                         [formControl]="emailFormControl"
-                        [errorStateMatcher]="matcher"
                     />
                     <mat-error
                         *ngIf="
@@ -102,7 +95,6 @@
                         name="phone"
                         [(ngModel)]="employee.phone"
                         [formControl]="phoneFormControl"
-                        [errorStateMatcher]="matcher"
                     />
                     <mat-error *ngIf="phoneFormControl.hasError('required')">
                         This field is erquired
@@ -118,7 +110,6 @@
                         name="website"
                         [(ngModel)]="employee.website"
                         [formControl]="websiteFormControl"
-                        [errorStateMatcher]="matcher"
                     />
                     <mat-error *ngIf="websiteFormControl.hasError('required')">
                         This field is erquired
@@ -138,7 +129,7 @@
                         "
                         (click)="
                             saveChanges();
-                            employeeEditDataServiceService.hideEditForm()
+                            employeeEditDataService.hideEditForm()
                         "
                     >
                         Save changes
