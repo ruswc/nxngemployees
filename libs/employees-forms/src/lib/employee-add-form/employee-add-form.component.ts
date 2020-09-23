@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 
 @Component({
     selector: 'nxngemployees-employee-add-form',

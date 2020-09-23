@@ -54,11 +54,9 @@
                         id="username"
                         name="username"
                         [(ngModel)]="employee.username"
-                        [formControl]="usernamenameFormControl"
+                        [formControl]="usernameFormControl"
                     />
-                    <mat-error
-                        *ngIf="usernamenameFormControl.hasError('required')"
-                    >
+                    <mat-error *ngIf="usernameFormControl.hasError('required')">
                         This field is erquired
                     </mat-error>
                 </mat-form-field>
@@ -122,7 +120,7 @@
                         type="button"
                         [disabled]="
                             !nameFormControl.valid ||
-                            !usernamenameFormControl.valid ||
+                            !usernameFormControl.valid ||
                             !emailFormControl.valid ||
                             !phoneFormControl.valid ||
                             !websiteFormControl.valid

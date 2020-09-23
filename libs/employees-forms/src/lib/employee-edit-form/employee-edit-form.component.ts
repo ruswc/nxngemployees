@@ -4,9 +4,9 @@ import {
     Input,
     OnInit
 } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
 import { HeaderEmployeeNameService } from '@nxngemployees/shared';
-import { FormControl, Validators } from '@angular/forms';
 
 export interface Employee {
     id: number;
@@ -29,7 +29,7 @@ export class EmployeeEditFormComponent implements OnInit {
     hide$ = this.employeeEditDataService.editFormState$;
 
     nameFormControl = new FormControl('', [Validators.required]);
-    usernamenameFormControl = new FormControl('', [Validators.required]);
+    usernameFormControl = new FormControl('', [Validators.required]);
     phoneFormControl = new FormControl('', [Validators.required]);
     websiteFormControl = new FormControl('', [Validators.required]);
     emailFormControl = new FormControl('', [
