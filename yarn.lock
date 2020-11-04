@@ -1486,6 +1486,26 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
+"@ngrx/effects@9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-9.1.0.tgz#b977780ce9e58632ae8e2f259741a3861bbbbfe4"
+  integrity sha512-DPMtp/2YTrvuxMqaehQ39FeoNODuMcRB6xDImvrnMFPIkUcP3mDHnIg6UB5c2JvfHlZZClKR+Fb+RE2nuVub8w==
+
+"@ngrx/entity@9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-9.1.0.tgz#2f5fe5f5277db532d9223c70687d252490c560f3"
+  integrity sha512-MrjdJeJIaUpPogxzK7S/z5Cc/6XWyyQfUgkXrTS20JZyX4amjVZYL3oU3FF3JhXO9ZkhaBFi07IDPEtvyYl/Mg==
+
+"@ngrx/router-store@9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-9.1.0.tgz#e8e72167813746c08b02cb6616c32fb8e0b87385"
+  integrity sha512-zdIBUsfyrrA64mUqajHMARSwttOAOJ5FSyVJLHQfBlz9/vil6Kby1KhVLEG7mGmkz799YYlIM135QsrJhgf7wA==
+
+"@ngrx/schematics@9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-9.1.0.tgz#05428023a4e0a9b35521c85d0ec80c905bb34963"
+  integrity sha512-CYfBFP/jCNFFQkV+Afc4kPCRf3Ye2NlNIEwU5urtZMt8WV8RWFbzsbL0O9UMH6zshPvwoZoBqU/5ZftZupxcHA==
+
 "@ngrx/store-devtools@9.2.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-9.2.0.tgz#298b86b0c4ea483313b67d64a68b2d3376a5a04f"
@@ -7742,10 +7762,10 @@ object-keys@^1.0.12, object-keys@^1.1.1:
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
-object-path@0.11.4:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
-  integrity sha1-NwrnUvvzfePqcKhhwju6iRVpGUk=
+object-path@0.11.5:
+  version "0.11.5"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.5.tgz#d4e3cf19601a5140a55a16ad712019a9c50b577a"
+  integrity sha512-jgSbThcoR/s+XumvGMTMf81QVBmah+/Q7K7YduKeKVWL7N111unR2d6pZZarSk6kY/caeNxUDyxOvMWyzoU2eg==
 
 object-visit@^1.0.0:
   version "1.0.1"
