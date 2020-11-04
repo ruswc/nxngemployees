@@ -18,9 +18,16 @@
                 mat-icon-button
                 matTooltip="Edit this employee"
                 matTooltipPosition="below"
-                (click)="employeeEditDataService.showEditForm()"
+                (click)="showEditForm()"
             >
                 <mat-icon>create</mat-icon>
+            </button>
+            <button
+                mat-icon-button
+                matTooltip="Refresh the list"
+                (click)="getEmployee()"
+            >
+                <mat-icon>arrow_downward</mat-icon>
             </button>
         </div>
     </mat-card-title>
