@@ -19,6 +19,10 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { LoaderComponent } from './loader/loader.component';
 
 import { EmployeesFormsModule } from '@nxngemployees/employees-forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromEmployees from './+state/employees/employees.reducer';
+import { EmployeesEffects } from './+state/employees/employees.effects';
 
 const routes: Routes = [
     {
@@ -40,7 +44,12 @@ const routes: Routes = [
         MatCardModule,
         MatDividerModule,
         EmployeesFormsModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        StoreModule.forFeature(
+            fromEmployees.EMPLOYEES_FEATURE_KEY,
+            fromEmployees.reducer
+        ),
+        EffectsModule.forFeature([EmployeesEffects])
     ],
     declarations: [
         DetailedMatListItemComponent,
