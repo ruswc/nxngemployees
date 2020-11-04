@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Employees } from '../employees.service';
-import { EmployeesService } from '../employees.service';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderEmployeeNameService } from '@nxngemployees/shared';
 import { EmployeeEditDataService } from '@nxngemployees/employees-forms';
+import { HeaderEmployeeNameService } from '@nxngemployees/shared';
+import { Employees, EmployeesService } from '../employees.service';
 
 @Component({
     selector: 'nxngemployees-employee-detailed',
@@ -22,7 +21,7 @@ export class EmployeeDetailedComponent implements OnInit, OnDestroy {
         private employeeEditDataService: EmployeeEditDataService
     ) {}
 
-    ngOnInit() {
+    public ngOnInit() {
         this.loader = true;
         this.employeeEditDataService.theEmployeeSubject$.subscribe(value => {
             this.employee = value;
@@ -30,15 +29,25 @@ export class EmployeeDetailedComponent implements OnInit, OnDestroy {
         this.getEmployee();
     }
 
-    getEmployee() {
+    public getEmployee() {
         this.employeesService.getEmployee(this.id).subscribe(response => {
-            this.employeeEditDataService.setEmployee(response);
-            this.loader = false;
-            this.headerEmployeeNameService.setEmployeeName(this.employee.name);
+            this.employeeEditDataService.setEmployee([]);
+            this.loader = true;
+            setTimeout(() => {
+                this.employeeEditDataService.setEmployee(response);
+                this.loader = false;
+                this.headerEmployeeNameService.setEmployeeName(
+                    this.employee.name
+                );
+            }, 250);
         });
     }
 
-    ngOnDestroy() {
+    public showEditForm() {
+        this.employeeEditDataService.showEditForm();
+    }
+
+    public ngOnDestroy() {
         this.headerEmployeeNameService.setEmployeeName('');
     }
 }
